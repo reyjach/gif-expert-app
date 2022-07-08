@@ -13,7 +13,7 @@ export const AppCategory = ({ setCategories }) => {
     e.preventDefault();
 
     if (inputValue.trim().length >2){
-      setCategories( cat => [...cat,inputValue]);
+      setCategories( cat => [inputValue,...cat]);
       setInputValue('');
     }
     
