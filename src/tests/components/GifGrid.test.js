@@ -38,6 +38,12 @@ describe('Prueba de GifGrid', () => {
 
         const wrapper = shallow(<GifGrid category={category}/>);
 
-        expect(wrapper).toMatchSnapshot()
+        const parrafo = wrapper.find('p').exists(); // para saber si existe el parrafo
+
+        expect(wrapper).toMatchSnapshot();
+
+        expect(parrafo).toBe(false);
+
+        expect(wrapper.find('GifGridItem').length).toBe(gifs.length);
     })
  })
